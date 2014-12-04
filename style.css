@@ -282,3 +282,18 @@ div {
             transform: rotate(-130deg);
   }
 }
+
+keyframes tchau {
+  %50 {
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+  }
+  75% {
+    -webkit-transform: rotate(-125deg);
+            transform: rotate(-125deg); 
+  }
+  100% {
+    -webkit-transform: rotate(-130deg);
+            transform: rotate(-130deg);
+  }
+}
