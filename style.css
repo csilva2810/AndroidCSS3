@@ -37,53 +37,42 @@ div {
 .nuvem {
   z-index: 0;
   position: absolute;
-  top: 3%;
+  top: 5%;
   left: -10%;
   background: white;
-  width: 100px;
-  height: 20px;
-  border-radius: 50%;
-  box-shadow: 0 3px 7px 0 rgba(0,0,0,.3);
+  width: 90px;
+  height: 30px;
+  border-radius: 100px;
+  box-shadow: 0 3px 7px 0 rgba(50,50,50,.3);
+  opacity: 0.85;
 
   -webkit-animation: nuvem 30s linear 0s infinite alternate;
           animation: nuvem 30s linear 0s infinite alternate;
 }
 
+.nuvem::after {
+  content: '';
+  position: absolute;
+  top: -17px;
+  right: 20px;
+  color: white;
+  background: white;
+  width: 50px;
+  height: 45px;
+  border-radius: 50%;
+}
+
 .nuvem2 {
-  top: 10%;
+  top: 12%;
   -webkit-animation: nuvem 60s linear 1s infinite alternate;
           animation: nuvem 60s linear 1s infinite alternate;
 }
 
 .nuvem3 {
-  top: 12%;
+  top: 15%;
   left: 110%;
   -webkit-animation: nuvemright 45s linear .3s infinite alternate;
           animation: nuvemright 45s linear .3s infinite alternate;
-}
-
-.nuvem::after {
-  content: '';
-  position: absolute;
-  top: -5px;
-  right: 8px;
-  color: white;
-  background: white;
-  width: 60px;
-  height: 15px;
-  border-radius: 50%;
-}
-
-.nuvem::before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: 5px;
-  color: white;
-  background: white;
-  width: 40px;
-  height: 20px;
-  border-radius: 50%;
 }
 
 .chao {
@@ -98,14 +87,14 @@ div {
 .lollipop-container {
   z-index: -1;
   position: absolute;
-  top: 44%;
+  bottom: 40%;
   right: 10%;
   width: 75px;
 }
 
 .lollipop-container.left {
-  top: 47%;
-  left: 10%;
+  bottom: 38%;
+  right: 18%;
 }
 
 .lollipop {
