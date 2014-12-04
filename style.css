@@ -360,16 +360,3 @@ div {
             transform: rotate(360deg);
   }
 }
-
-@media screen and (min-width: 500px) {
-  
-    .lollipop-container {
-      top: 60%;
-      right: 5%;
-    }
-
-    .lollipop-container.left {
-      top: 62%;
-      left: 5%;
-    }
-}
