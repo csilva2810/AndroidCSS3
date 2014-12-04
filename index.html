@@ -5,8 +5,17 @@
     <title>Android</title>
 
     <link rel="stylesheet" href="style.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:100' rel='stylesheet' type='text/css'>
   </head>
   <body>
+
+    <div class="sol"></div>
+    <div class="nuvem"></div>
+    <div class="nuvem nuvem2"></div>
+    <div class="nuvem nuvem3"></div>
+    <div class="chao"></div>
+  
+    <div class="lollipop">android</div>
 
     <div class="android">
       <div class="cabeca">
@@ -34,9 +43,8 @@
     <script type="text/javascript">
       olho1 = document.querySelector(".olho1");
       olho2 = document.querySelector(".olho2");
+      android = document.querySelector(".android");
 
-      console.log(olho1);
-      console.log(olho2);
       var piscarOlhos = function () {
         olho1.classList.add('piscar');
         olho2.classList.add('piscar');
@@ -49,7 +57,18 @@
         olho2.classList.remove('piscar');     
       }
 
+      var darTchau = function () {
+        android.classList.add('tchau');
+
+        setTimeout(paraDeDarTchau, 1000);
+      }
+
+      var paraDeDarTchau = function () {
+        android.classList.remove('tchau');
+      }
+
       setInterval(piscarOlhos, 3000);
+      setInterval(darTchau, 10000);
     </script>
 
   </body>

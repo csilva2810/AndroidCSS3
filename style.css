@@ -6,10 +6,15 @@
 }
 
 body {
+  margin: 0;
+  padding: 0;
   position: fixed;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, #fff, #ccc);
+  background: #DFEBD9;
+  background-size: 100%;
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 14px;
 }
 
 div {
@@ -17,18 +22,125 @@ div {
   height: 50px;
 }
 
+.sol {
+  position: absolute;
+  background: #FCB040;
+  top: 5%;
+  left: 4%;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+
+  box-shadow: 0 3px 7px 0 rgba(0,0,0,.3);
+}
+
+.nuvem {
+  z-index: 0;
+  position: absolute;
+  top: 3%;
+  left: -10%;
+  background: white;
+  width: 100px;
+  height: 20px;
+  border-radius: 50%;
+  box-shadow: 0 3px 7px 0 rgba(0,0,0,.3);
+
+  -webkit-animation: nuvem 30s linear 0s infinite alternate;
+}
+
+.nuvem2 {
+  top: 10%;
+  -webkit-animation: nuvem 60s linear 1s infinite alternate;
+}
+
+.nuvem3 {
+  top: 12%;
+  left: 110%;
+  -webkit-animation: nuvemright 45s linear .3s infinite alternate;
+}
+
+.nuvem::after {
+  position: absolute;
+  top: -8px;
+  right: 8px;
+  content: '';
+  color: white;
+  background: white;
+  width: 60px;
+  height: 15px;
+
+  border-radius: 50%;
+}
+
+.nuvem::before {
+  position: absolute;
+  top: -5px;
+  left: 5px;
+  content: '';
+  color: white;
+  background: white;
+  width: 40px;
+  height: 20px;
+
+  border-radius: 50%;
+}
+
+.chao {
+  z-index: -2;
+  position: absolute;
+  background: lightgreen;
+  width: 100%;
+  height: 45%;
+  bottom: 0;
+}
+
+.lollipop {
+  z-index: -3;
+  top: 30%;
+  right: 15%;
+  position: fixed;
+  width: 75px;
+  height: 75px;
+  line-height: 75px;
+  text-align: center;
+  color: white;
+  background: #F16192;
+  font-weight: bold;
+  border-radius: 50%;
+
+  box-shadow: 0 3px 7px 0 rgba(0,0,0,.3), inset 2px 2px 0 0 rgba(50,50,50,0.1);
+}
+
+.lollipop::after {
+  z-index: -1;
+  position: absolute;
+  content: '';
+  background: white;
+  width: 10px;
+  height: 100px;
+  top: 75px;
+  left: 42%;
+}
+
 .android {
+  z-index: 1;
   position: relative;
-  top: 50px;
+  top: 80px;
   margin: 0 auto;
   padding: 20px;
-  width: 350px;
-  height: 500px;
+  width: 300px;
+  height: 450px;
   text-align: center;
 }
 
 .android:hover .braco2 {
-  transform: rotate(-130deg);
+  -webkit-transform: rotate(-130deg);
+          transform: rotate(-130deg);
+}
+
+.android.tchau .braco2 {
+  -webkit-animation: tchau 0.2s linear 0s 4 alternate;
+          animation: tchau 0.2s linear 0s 4 alternate;
 }
 
 .cabeca {
@@ -36,7 +148,7 @@ div {
   background: linear-gradient(to bottom, #88c8ca 50%, transparent 50%);
   margin: 10px auto;
   width: 70%;
-  height: 225px;
+  height: 200px;
   border-radius: 50%;
 }
 
@@ -87,7 +199,7 @@ div {
 .corpo-container {
   position: relative;
   clear: both;
-  top: -112.5px;
+  top: -100px;
   width: 100%;
 }
 
@@ -96,7 +208,7 @@ div {
   left: 15%;
   background: #88c8ca;
   width: 70%;
-  height: 200px;
+  height: 175px;
 
   border-radius: 2px 2px 25px 25px;
 }
@@ -106,7 +218,7 @@ div {
   background: #88c8ca;
   margin-top: -5px;
   width: 12%;
-  height: 130px;
+  height: 115px;
   border-radius: 20px;
 
   transition: .3s ease;
@@ -114,7 +226,7 @@ div {
 }
 
 .braco1 { left: 0; }
-.braco2 { right: 0;}
+.braco2 { right: 0; }
 
 .pernas-container {
   position: relative;
@@ -129,7 +241,7 @@ div {
   position: absolute;
   top: 0;
   width: 30%;
-  height: 120px;
+  height: 110px;
   border-radius: 20px;
 }
 
@@ -147,5 +259,41 @@ div {
   100% {
     height: 1px;
     top: 10px;
+  }
+}
+
+@-webkit-keyframes nuvem { 100% { left: 110%; } }
+@keyframes nuvem { 100% { left: 110%; } }
+
+@-webkit-keyframes nuvemright { 100% { left: -110%; } }
+@keyframes nuvemright { 100% { left: -110%; } }
+
+@-webkit-keyframes tchau {
+  %50 {
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+  }
+  75% {
+    -webkit-transform: rotate(-125deg);
+            transform: rotate(-125deg); 
+  }
+  100% {
+    -webkit-transform: rotate(-130deg);
+            transform: rotate(-130deg);
+  }
+}
+
+keyframes tchau {
+  %50 {
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+  }
+  75% {
+    -webkit-transform: rotate(-125deg);
+            transform: rotate(-125deg); 
+  }
+  100% {
+    -webkit-transform: rotate(-130deg);
+            transform: rotate(-130deg);
   }
 }
