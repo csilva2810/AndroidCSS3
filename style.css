@@ -87,7 +87,7 @@ div {
 }
 
 .chao {
-  z-index: 2;
+  z-index: 1;
   position: absolute;
   background: lightgreen;
   width: 100%;
@@ -96,17 +96,16 @@ div {
 }
 
 .lollipop-container {
+  z-index: -1;
   position: absolute;
-  top: 45%;
+  top: 44%;
   right: 10%;
-  z-index: -3;
   width: 75px;
 }
 
 .lollipop-container.left {
-  right: none;
+  top: 47%;
   left: 10%;
-  top: 48%;
 }
 
 .lollipop {
@@ -360,4 +359,17 @@ div {
        -moz-transform: rotate(360deg);
             transform: rotate(360deg);
   }
+}
+
+@media screen and (min-height: 680px) {
+  
+    .lollipop-container {
+      top: 60%;
+      right: 5%;
+    }
+
+    .lollipop-container.left {
+      top: 62%;
+      left: 5%;
+    }
 }
