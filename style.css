@@ -361,7 +361,7 @@ div {
   }
 }
 
-@media screen and (min-height: 680px) {
+@media screen and (min-width: 500px) {
   
     .lollipop-container {
       top: 60%;
