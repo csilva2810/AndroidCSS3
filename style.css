@@ -116,6 +116,7 @@ div {
   position: absolute;
   content: '';
   background: white;
+  background: linear-gradient(to right, #fff, #eee 50%);
   width: 10px;
   height: 100px;
   top: 75px;
