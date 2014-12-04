@@ -139,8 +139,8 @@ div {
 }
 
 .android.tchau .braco2 {
-  -webkit-animation: tchau 0.2s linear 0s 4 alternate;
-          animation: tchau 0.2s linear 0s 4 alternate;
+  -webkit-animation: tchau 0.75s linear 0s 2 alternate;
+          animation: tchau 0.75s linear 0s 2 alternate;
 }
 
 .cabeca {
@@ -269,13 +269,17 @@ div {
 @keyframes nuvemright { 100% { left: -110%; } }
 
 @-webkit-keyframes tchau {
-  %50 {
-    -webkit-transform: rotate(-135deg);
-            transform: rotate(-135deg);
+  10% {
+    -webkit-transform: rotate(-130deg);
+            transform: rotate(-130deg);
   }
-  75% {
-    -webkit-transform: rotate(-125deg);
-            transform: rotate(-125deg); 
+  %60 {
+    -webkit-transform: rotate(-140deg);
+            transform: rotate(-140deg);
+  }
+  80% {
+    -webkit-transform: rotate(-120deg);
+            transform: rotate(-120deg); 
   }
   100% {
     -webkit-transform: rotate(-130deg);
@@ -284,13 +288,17 @@ div {
 }
 
 keyframes tchau {
-  %50 {
-    -webkit-transform: rotate(-135deg);
-            transform: rotate(-135deg);
+  10% {
+    -webkit-transform: rotate(-130deg);
+            transform: rotate(-130deg);
   }
-  75% {
-    -webkit-transform: rotate(-125deg);
-            transform: rotate(-125deg); 
+  %60 {
+    -webkit-transform: rotate(-140deg);
+            transform: rotate(-140deg);
+  }
+  80% {
+    -webkit-transform: rotate(-120deg);
+            transform: rotate(-120deg); 
   }
   100% {
     -webkit-transform: rotate(-130deg);
