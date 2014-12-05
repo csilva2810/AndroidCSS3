@@ -24,13 +24,13 @@ div {
 }
 
 .search-container {
+  z-index: 10;
   width: 100%;
   height: 5%;
   position: relative;
 }
 
 .search {
-  z-index: 10;
   margin: 0 auto;
   margin-top: 0;
   padding: 12px;
@@ -71,7 +71,7 @@ div {
 }
 
 .nuvem {
-  z-index: 0;
+  z-index: 1;
   position: absolute;
   top: 5%;
   left: -10%;
@@ -114,18 +114,20 @@ div {
 .lollipop-container {
   z-index: -1;
   position: absolute;
-  bottom: 40%;
+  bottom: 14%;
   right: 10%;
   width: 75px;
+  height: 175px;
 }
 
 .lollipop-container.left {
-  bottom: 38%;
+  bottom: 10%;
   right: 20%;
 }
 
 .lollipop {
   z-index: 0;
+  position: relative;
   margin: 0 auto;
   width: 75px;
   height: 75px;
@@ -147,16 +149,27 @@ div {
   -webkit-animation-delay: 1s;
      -moz-animation-delay: 1s;
           animation-delay: 1s;
-  -webkit-animation-duration: 4s;
-     -moz-animation-duration: 4s;
-          animation-duration: 4s;
+  -webkit-animation-duration: 10s;
+     -moz-animation-duration: 10s;
+          animation-duration: 10s;
+}
+
+.lollipop::after {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  background: rgba(255,255,255,0.1);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
 }
 
 .palito {
   margin: 0 auto;
-  z-index: -5;
+  z-index: -1;
   background: white;
-  background: linear-gradient(to right, #fff, #eee 50%);
+  background: linear-gradient(to right, #fff, rgba(255,255,255,0.1) 50%);
   width: 10px;
   height: 100px;
 
@@ -168,14 +181,14 @@ div {
   position: absolute;
   background: #7DC0A1;
   width: 100%;
-  height: 30%;
+  height: 15%;
   bottom: 0;
 }
 
 .android {
   z-index: 1;
   position: relative;
-  top: -280px;
+  top: -320px;
   margin: 0 auto;
   padding: 20px;
   width: 300px;
@@ -398,7 +411,7 @@ div {
   }
 
   .cabeca {
-    height: 112px;
+    height: 120px;
   }
 
   .olho1, .olho2 {
@@ -407,14 +420,14 @@ div {
   }
 
   .corpo-container {
-    top: -50px;
+    top: -55px;
     width: 100%;
   }
 
   .corpo {
     left: 15%;
     width: 70%;
-    height: 125px;
+    height: 130px;
     border-radius: 2px 2px 25px 25px;
   }
 
@@ -429,7 +442,7 @@ div {
   }
 
   .perna1, .perna2 {
-    top: 0;
+    top: -10px;
     width: 30%;
     height: 85px;
   }
