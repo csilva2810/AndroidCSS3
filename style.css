@@ -171,7 +171,10 @@ div {
   margin: 0 auto;
   z-index: -1;
   background: white;
-  background: linear-gradient(to right, #fff, rgba(255,255,255,0.1) 50%);
+  background: -webkit-linear-gradient(to right, #fff, rgba(255,255,255,0.1) 50%);
+  background:    -moz-linear-gradient(to right, #fff, rgba(255,255,255,0.1) 50%);
+  background:     -ms-linear-gradient(to right, #fff, rgba(255,255,255,0.1) 50%);
+  background:         linear-gradient(to right, #fff, rgba(255,255,255,0.1) 50%);
   width: 10px;
   height: 100px;
 
