@@ -111,15 +111,6 @@ div {
           animation: nuvemright 45s linear .3s infinite alternate;
 }
 
-.chao {
-  z-index: 1;
-  position: absolute;
-  background: #7DC0A1;
-  width: 100%;
-  height: 30%;
-  bottom: 0;
-}
-
 .lollipop-container {
   z-index: -1;
   position: absolute;
@@ -172,6 +163,15 @@ div {
   box-shadow: 0 3px 7px 0 rgba(0,0,0,.3);
 }
 
+.chao {
+  z-index: 1;
+  position: absolute;
+  background: #7DC0A1;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+}
+
 .android {
   z-index: 1;
   position: relative;
@@ -180,8 +180,8 @@ div {
   padding: 20px;
   width: 300px;
   height: 375px;
-  text-align: center;
-  border: 1px solid red;
+  /*border: 1px solid red;*/
+  transition: .3s;
 }
 
 .android:hover .braco2 {
@@ -197,28 +197,28 @@ div {
 .cabeca {
   position: relative;
   background: linear-gradient(to bottom, #88c8ca 50%, transparent 50%);
-  margin: 4% auto;
+  margin: 0 auto;
   width: 70%;
-  height: 52%;
+  height: 200px;
   border-radius: 50%;
+  transition: .3s;
 }
 
 .antena1, .antena2 {
   z-index: -1;
   position: absolute;
+  top: -20px;
   background: #88c8ca;
   width: 5px;
   border-radius: 20px;
 }
 
 .antena1 {
-  top: -20px;
   left: 25%;
   transform: rotate(-25deg);
 }
 
 .antena2 {
-  top: -20px;
   right: 25%;
   transform: rotate(25deg);
 }
@@ -237,6 +237,7 @@ div {
   position: absolute;
   top: 0;
   border-radius: 50%;
+  transition: .3s;
 }
 
 .olho1 { left: 0; }
@@ -250,7 +251,7 @@ div {
 .corpo-container {
   position: relative;
   clear: both;
-  top: -100px;
+  top: -92px;
   width: 100%;
 }
 
@@ -259,10 +260,10 @@ div {
   left: 15%;
   background: #88c8ca;
   width: 70%;
-  /*height: 175px;*/
-  height: 350%;
+  height: 175px;
 
   border-radius: 2px 2px 25px 25px;
+  transition: .3s;
 }
 
 .braco1, .braco2 {
@@ -270,8 +271,7 @@ div {
   background: #88c8ca;
   margin-top: -5px;
   width: 12%;
-  /*height: 115px;*/
-  height: 250%;
+  height: 115px;
   border-radius: 20px;
 
   transition: .3s ease;
@@ -294,9 +294,9 @@ div {
   position: absolute;
   top: 0;
   width: 30%;
-  /*height: 110px;*/
-  height: 230%;
+  height: 110px;
   border-radius: 20px;
+  transition: .3s;
 }
 
 .perna1 { left: 5%; }
@@ -390,9 +390,47 @@ div {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .android {
+    top: -230px;
     width: 200px;
-    height: 275px;  
+    height: 275px;
+  }
+
+  .cabeca {
+    height: 112px;
+  }
+
+  .olho1, .olho2 {
+    width: 15px;
+    height: 15px;
+  }
+
+  .corpo-container {
+    top: -50px;
+    width: 100%;
+  }
+
+  .corpo {
+    left: 15%;
+    width: 70%;
+    height: 125px;
+    border-radius: 2px 2px 25px 25px;
+  }
+
+  .braco1, .braco2 {
+    margin-top: -5px;
+    width: 12%;
+    height: 85px;
+  }
+
+  .pernas-container {
+    width: 50%;
+  }
+
+  .perna1, .perna2 {
+    top: 0;
+    width: 30%;
+    height: 85px;
   }
 }
