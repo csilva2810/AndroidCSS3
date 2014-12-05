@@ -20,6 +20,7 @@
     <div class="paint-container">
 
       <div class="sol"></div>
+      <div class="lua"></div>
       <div class="nuvem"></div>
       <div class="nuvem nuvem2"></div>
       <div class="nuvem nuvem3"></div>
@@ -82,7 +83,6 @@
 
       var darTchau = function () {
         android.classList.add('tchau');
-
         setTimeout(paraDeDarTchau, 1000);
       }
 
@@ -90,8 +90,20 @@
         android.classList.remove('tchau');
       }
 
+      var trocaTema = function () {
+        var currentDate = new Date();
+        var horaAtual = currentDate.getHours();
+        if ( (horaAtual >= 18 && horaAtual <= 23) || (horaAtual >= 1 && horaAtual <= 5) ) {
+          document.body.classList.add('night');
+        } else { 
+          document.body.classList.remove('night');
+        }
+      }
+
       setInterval(piscarOlhos, 3000);
       setInterval(darTchau, 10000);
+      setInterval(trocaTema, 60000);
+      trocaTema();
     </script>
 
   </body>
