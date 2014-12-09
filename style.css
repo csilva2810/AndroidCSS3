@@ -221,6 +221,7 @@ div {
 }
 
 .montanha {
+  opacity: 0.95;
   z-index: -2;
   position: absolute;
   bottom: 15%;
@@ -374,9 +375,39 @@ div {
   transition: .3s;
 }
 
-.furious .olho1 {
+.olho1::after, .olho2::after {
+  visibility: hidden;
+  content: '';
+  position: absolute;
+  top: -10px;
+  background: rgba(0,0,0,0.5);
+  width: 25px;
   height: 3px;
+  border-radius: 50%;
+
+  -webkit-transform: rotate(10deg);
+     -moz-transform: rotate(10deg);
+      -ms-transform: rotate(10deg);
+          transform: rotate(10deg);
+}
+
+.olho1::after {
+  left: -5px;
+}
+
+.olho2::after {
+  right: -5px;
+  -webkit-transform: rotate(-10deg);
+     -moz-transform: rotate(-10deg);
+      -ms-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+}
+
+.furious .olho1 {
+  left: 10px;
   top: 10px;
+  width: 10px;
+  height: 10px;
   -webkit-transform: rotate(30deg);
      -moz-transform: rotate(30deg);
       -ms-transform: rotate(30deg);
@@ -384,12 +415,19 @@ div {
 }
 
 .furious .olho2 {
-  height: 3px;
+  right: 10px;
   top: 10px;
+  width: 10px;
+  height: 10px;
   -webkit-transform: rotate(-30deg);
      -moz-transform: rotate(-30deg);
       -ms-transform: rotate(-30deg);
           transform: rotate(-30deg);
+}
+
+.furious .olho1::after,
+.furious .olho2::after {
+  visibility: visible;
 }
 
 .olho1 { left: 0; }
