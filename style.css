@@ -66,6 +66,7 @@ div {
 }
 
 .sol {
+  z-index: -2;
   position: absolute;
   background: #FCB040;
   top: 5%;
@@ -88,6 +89,7 @@ div {
 }
 
 .lua {
+  z-index: -2;
   position: absolute;
   background: #eee;
   top: 150%;
