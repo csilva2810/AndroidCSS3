@@ -460,6 +460,10 @@ div {
 @keyframes nuvemright { 100% { left: -110%; } }
 
 @-webkit-keyframes tchau {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
   10% {
     -webkit-transform: rotate(-130deg);
             transform: rotate(-130deg);
@@ -479,6 +483,12 @@ div {
 }
 
 @keyframes tchau {
+  0% {
+    -webkit-transform: rotate(0);
+       -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+            transform: rotate(0);
+  }
   10% {
     -webkit-transform: rotate(-130deg);
        -moz-transform: rotate(-130deg);
