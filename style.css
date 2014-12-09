@@ -20,7 +20,7 @@ body {
 }
 
 body.night {
-  background: #24363c;
+  background: #021A32;
 }
 
 div {
@@ -156,14 +156,14 @@ div {
   z-index: -1;
   position: absolute;
   bottom: 14%;
-  right: 5%;
+  right: 25px;
   width: 75px;
   height: 175px;
 }
 
 .lollipop-container.left {
   bottom: 12%;
-  right: 20%;
+  right: 95px;
 }
 
 .lollipop {
@@ -218,6 +218,47 @@ div {
   height: 100px;
 
   box-shadow: 0 3px 7px 0 rgba(0,0,0,.3);
+}
+
+.montanha {
+  z-index: -2;
+  position: absolute;
+  bottom: 15%;
+  width: 0;
+  height: 0;
+  border: 175px solid transparent;
+  border-bottom-color: #1C6D8A;
+
+  transition: .3s;
+}
+
+.montanha::after {
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+
+  border: 55px solid transparent;
+  border-bottom-color: #fff;
+  top: -55px;
+  left: -55px;
+}
+
+.night .montanha {
+  border-bottom-color: #273F7D;
+}
+
+.montanha.montanha2 {
+  opacity: 0.95;
+  border-width: 125px;
+  left: 250px;
+}
+
+.montanha.montanha2::after {
+  border-width: 35px;
+  border-bottom-color: #fafafa;
+  top: -35px;
+  left: -35px;
 }
 
 .chao {
@@ -336,19 +377,19 @@ div {
 .furious .olho1 {
   height: 3px;
   top: 10px;
-  -webkit-transform: rotate(25deg);
-     -moz-transform: rotate(25deg);
-      -ms-transform: rotate(25deg);
-          transform: rotate(25deg);
+  -webkit-transform: rotate(30deg);
+     -moz-transform: rotate(30deg);
+      -ms-transform: rotate(30deg);
+          transform: rotate(30deg);
 }
 
 .furious .olho2 {
   height: 3px;
   top: 10px;
-  -webkit-transform: rotate(-25deg);
-     -moz-transform: rotate(-25deg);
-      -ms-transform: rotate(-25deg);
-          transform: rotate(-25deg);
+  -webkit-transform: rotate(-30deg);
+     -moz-transform: rotate(-30deg);
+      -ms-transform: rotate(-30deg);
+          transform: rotate(-30deg);
 }
 
 .olho1 { left: 0; }

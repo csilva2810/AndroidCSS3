@@ -35,6 +35,9 @@
         <div class="palito"></div>
       </div>
 
+      <div class="montanha"></div>
+      <div class="montanha montanha2"></div>
+
       <div class="chao">
 
         <div class="android">
@@ -106,13 +109,13 @@
         if (clicksCount == 10) {
           android.classList.add("furious");
           clearInterval(piscarOlhosId);
-          clearInterval(darTchau);
-          setTimeout(easterEggOff, 7000);
+          clearInterval(darTchauId);
+          setTimeout(furiousEasterEggOff, 7000);
         }
         console.log(clicksCount);
       }
 
-      var easterEggOff = function () {
+      var furiousEasterEggOff = function () {
         android.classList.remove("furious");
         pisarOlhosId = setInterval(piscarOlhos, 3000);
         darTchauId   = setInterval(darTchau, 10000);
@@ -121,7 +124,7 @@
 
       var piscarOlhosId = setInterval(piscarOlhos, 3000);
       var darTchauId    = setInterval(darTchau, 10000);
-      var trocaTemaId   = setInterval(trocaTema, 60000);
+      var trocaTemaId   = setInterval(trocaTema, 25000);
 
       trocaTema();
 
