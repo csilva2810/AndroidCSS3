@@ -554,6 +554,15 @@ div {
     height: 120px;
   }
 
+  .antena1, .antena2 {
+    z-index: -1;
+    position: absolute;
+    top: -15px;
+    background: #8Bc349;
+    width: 5px;
+    border-radius: 20px;
+  }
+
   .olho1, .olho2 {
     width: 15px;
     height: 15px;
