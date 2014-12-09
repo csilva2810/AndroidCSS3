@@ -241,6 +241,7 @@ div {
   padding: 20px;
   width: 300px;
   height: 375px;
+  cursor: pointer;
   transition: .3s;
 }
 
@@ -249,6 +250,13 @@ div {
      -moz-transform: rotate(-130deg);
       -ms-transform: rotate(-130deg);
           transform: rotate(-130deg);
+}
+
+.android.furious:hover .braco2 {
+  -webkit-transform: rotate(0);
+     -moz-transform: rotate(0);
+      -ms-transform: rotate(0);
+          transform: rotate(0); 
 }
 
 .android.tchau .braco2 {
@@ -269,6 +277,13 @@ div {
   transition: .3s;
 }
 
+.furious .cabeca {
+  background: -webkit-linear-gradient(to bottom, #f74d4d 50%, transparent 50%);
+  background:    -moz-linear-gradient(to bottom, #f74d4d 50%, transparent 50%);
+  background:     -ms-linear-gradient(to bottom, #f74d4d 50%, transparent 50%);
+  background:         linear-gradient(to bottom, #f74d4d 50%, transparent 50%);
+}
+
 .antena1, .antena2 {
   z-index: -1;
   position: absolute;
@@ -276,6 +291,11 @@ div {
   background: #8Bc349;
   width: 5px;
   border-radius: 20px;
+}
+
+.furious .antena1, 
+.furious .antena2 {
+  background: #f74d4d;
 }
 
 .antena1 {
@@ -311,6 +331,24 @@ div {
   transition: .3s;
 }
 
+.furious .olho1 {
+  height: 3px;
+  top: 10px;
+  -webkit-transform: rotate(25deg);
+     -moz-transform: rotate(25deg);
+      -ms-transform: rotate(25deg);
+          transform: rotate(25deg);
+}
+
+.furious .olho2 {
+  height: 2px;
+  top: 10px;
+  -webkit-transform: rotate(-25deg);
+     -moz-transform: rotate(-25deg);
+      -ms-transform: rotate(-25deg);
+          transform: rotate(-25deg);
+}
+
 .olho1 { left: 0; }
 .olho2 { right: 0; }
 
@@ -337,6 +375,10 @@ div {
   transition: .3s;
 }
 
+.furious .corpo {
+  background: #f74d4d;
+}
+
 .braco1, .braco2 {
   position: absolute;
   background: #8Bc349;
@@ -350,6 +392,11 @@ div {
      -moz-transform-origin: 15px 15px;
       -ms-transform-origin: 15px 15px;
           transform-origin: 15px 15px;
+}
+
+.furious .braco1,
+.furious .braco2 {
+  background: #f74d4d;
 }
 
 .braco1 { left: 0; }
@@ -371,6 +418,11 @@ div {
   height: 110px;
   border-radius: 20px;
   transition: .3s;
+}
+
+.furious .perna1,
+.furious .perna2 {
+  background: #f74d4d;
 }
 
 .perna1::after, .perna2::after {

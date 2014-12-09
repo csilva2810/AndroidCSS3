@@ -68,6 +68,7 @@
       olho1 = document.querySelector(".olho1");
       olho2 = document.querySelector(".olho2");
       android = document.querySelector(".android");
+      clicksCount = 0;
 
       var piscarOlhos = function () {
         olho1.classList.add('piscar');
@@ -100,10 +101,33 @@
         }
       }
 
-      setInterval(piscarOlhos, 3000);
-      setInterval(darTchau, 10000);
-      setInterval(trocaTema, 60000);
+      var furiousEasterEgg = function () {
+        clicksCount += 1;
+        if (clicksCount == 10) {
+          android.classList.add("furious");
+          clearInterval(piscarOlhosId);
+          clearInterval(darTchau);
+          setTimeout(easterEggOff, 7000);
+        }
+        console.log(clicksCount);
+      }
+
+      var easterEggOff = function () {
+        android.classList.remove("furious");
+        pisarOlhosId = setInterval(piscarOlhos, 3000);
+        darTchauId   = setInterval(darTchau, 10000);
+        clicksCount  = 0;
+      }
+
+      var piscarOlhosId = setInterval(piscarOlhos, 3000);
+      var darTchauId    = setInterval(darTchau, 10000);
+      var trocaTemaId   = setInterval(trocaTema, 60000);
+
       trocaTema();
+
+      android.onclick = function () {
+        furiousEasterEgg();
+      }
     </script>
 
   </body>
