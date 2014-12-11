@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -70,7 +70,7 @@
     <div class="modal" id="modal">
       <div class="modal-title">Resultados</div>
       <button type="button" class="btn-modal" id="btn-modal">&#9587;</button>
-      
+      <!--      
       <script>
         (function() {
           var cx = '012274813638859714121:0rsblg4jxri';
@@ -86,10 +86,11 @@
       <div class="search-results">
         <gcse:searchresults-only></gcse:searchresults-only>  
       </div>
-
+      -->
     </div>
 
     <script type="text/javascript">
+      form = document.search;
       search = document.querySelector("#q");
       olho1 = document.querySelector(".olho1");
       olho2 = document.querySelector(".olho2");
@@ -153,8 +154,24 @@
           search.value = busca[1].replace(/[+]/g,' ') || "x";
           setTimeout(function(){
             modal.className += " show";
-          },1000);
+          }, 1000);
         }  
+      }
+
+      var ajaxPesquisa = function() {
+
+        var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            var ret = xhr.responseXML;
+            alert(ret);
+          }
+        }
+
+        xhr.open('GET', 'ajax_pesquisa.html?q='+search.value, true);
+        xhr.send(null);
+
       }
 
       var piscarOlhosId = setInterval(piscarOlhos, 3000);
@@ -163,6 +180,18 @@
 
       trocaTema();
       showModal();
+
+      form.onsubmit = function (evt) {
+        e = evt ? evt : window.event;
+        if (e.stopPropagation) {
+          e.stopPropagation();
+          e.preventDefault();
+        } else {
+          e.cancelBubble = true;
+          e.returnValue = false;
+        }
+        ajaxPesquisa();
+      }
 
       android.onclick = function () {
         furiousEasterEgg();
