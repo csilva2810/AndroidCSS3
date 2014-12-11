@@ -164,7 +164,7 @@
 
         xhr.onreadystatechange = function () {
           if (xhr.readyState === 4 && xhr.status === 200) {
-            var ret = xhr.responseXML;
+            var ret = xhr.responseText;
             alert(ret);
           }
         }
