@@ -12,8 +12,8 @@
   <body>
   
     <div class="search-container">
-      <form action="http://www.google.com.br/search" name="search" method="get" >
-        <input type="search" name="q" placeholder="Buscar no Google..." class="search" tabindex="1">  
+      <form action="" name="search" method="GET">
+        <input type="search" class="search" name="q" id="q" placeholder="Buscar no Google..." tabindex="1">  
       </form>
     </div>
 
@@ -67,10 +67,35 @@
 
     </div>
 
+    <div class="modal" id="modal">
+      <div class="modal-title">Resultados</div>
+      <button type="button" class="btn-modal" id="btn-modal">&#9587;</button>
+      
+      <script>
+        (function() {
+          var cx = '012274813638859714121:0rsblg4jxri';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript'; 
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      
+      <div class="search-results">
+        <gcse:searchresults-only></gcse:searchresults-only>  
+      </div>
+
+    </div>
+
     <script type="text/javascript">
+      search = document.querySelector("#q");
       olho1 = document.querySelector(".olho1");
       olho2 = document.querySelector(".olho2");
       android = document.querySelector(".android");
+      modal = document.querySelector("#modal");
+      btnModal = document.querySelector("#btn-modal");
       clicksCount = 0;
 
       var piscarOlhos = function () {
@@ -121,15 +146,32 @@
         clicksCount  = 0;
       }
 
+      var showModal = function () {
+        var q = window.location.search;
+        var busca = q.split('=');
+        if (q.length > 0) {
+          search.value = busca[1].replace(/[+]/g,' ') || "x";
+          setTimeout(function(){
+            modal.className += " show";
+          },1000);
+        }  
+      }
+
       var piscarOlhosId = setInterval(piscarOlhos, 3000);
       var darTchauId    = setInterval(darTchau, 10000);
       var trocaTemaId   = setInterval(trocaTema, 25000);
 
       trocaTema();
+      showModal();
 
       android.onclick = function () {
         furiousEasterEgg();
       }
+
+      btnModal.onclick = function () {
+        modal.className = "modal";
+      }
+      
     </script>
 
   </body>
