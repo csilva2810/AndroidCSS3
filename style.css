@@ -713,6 +713,10 @@ body.night {
     height: 15px;
   }
 
+  .olho1::after, .olho2::after {
+    width: 15px; 
+  }
+
   .corpo-container {
     top: -55px;
     width: 100%;
