@@ -79,6 +79,7 @@ body.night {
 .modal.show {
   opacity: 0.95;
   visibility: visible;
+  display: block;
 
   -webkit-transform: scale(1);
      -moz-transform: scale(1);
@@ -115,7 +116,6 @@ body.night {
   border-radius: 50%;
   cursor: pointer;
   text-align: center;
-  font-weight: bold;
   color: #555;
 
   transition: 0.2s;
@@ -123,8 +123,7 @@ body.night {
 
 .btn-modal:hover, 
 .btn-modal:active {
-  background: #f74d4d;
-  color: white;
+  background: #f5f5f5;
 }
 
 .paint-container {
