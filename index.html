@@ -70,7 +70,7 @@
     <div class="modal" id="modal">
       <div class="modal-title">Resultados</div>
       <button type="button" class="btn-modal" id="btn-modal">&#9587;</button>
-      <!--      
+           
       <script>
         (function() {
           var cx = '012274813638859714121:0rsblg4jxri';
@@ -86,11 +86,10 @@
       <div class="search-results">
         <gcse:searchresults-only></gcse:searchresults-only>  
       </div>
-      -->
+     
     </div>
 
     <script type="text/javascript">
-      form        = document.search;
       search      = document.querySelector("#q");
       olho1       = document.querySelector(".olho1");
       olho2       = document.querySelector(".olho2");
@@ -154,29 +153,7 @@
           setTimeout(function () {
             modal.className += " show";
           }, 1000);
-        } else {
-          if (search.value.length > 0) {
-            setTimeout(function () {
-              modal.className += " show";
-            }, 1000);
-          }
         }
-      }
-
-      var ajaxPesquisa = function() {
-
-        var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
-
-        xhr.onreadystatechange = function () {
-          if (xhr.readyState === 4 && xhr.status === 200) {
-            modal.innerHTML += xhr.responseText;
-            showModal();
-          }
-        }
-
-        xhr.open('GET', 'ajax_pesquisa.html?q='+search.value, true);
-        xhr.send(null);
-
       }
 
       var piscarOlhosId = setInterval(piscarOlhos, 3000);
@@ -184,22 +161,7 @@
       var trocaTemaId   = setInterval(trocaTema, 25000);
 
       setTimeout(trocaTema, 500);
-
-      if (window.location.search.length > 0) {
-        showModal();
-      }
-
-      form.onsubmit = function (evt) {
-        e = evt ? evt : window.event;
-        if (e.stopPropagation) {
-          e.stopPropagation();
-          e.preventDefault();
-        } else {
-          e.cancelBubble = true;
-          e.returnValue = false;
-        }
-        ajaxPesquisa();
-      }
+      showModal();
 
       android.onclick = function () {
         furiousEasterEgg();
