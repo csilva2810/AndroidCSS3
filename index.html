@@ -90,13 +90,13 @@
     </div>
 
     <script type="text/javascript">
-      form = document.search;
-      search = document.querySelector("#q");
-      olho1 = document.querySelector(".olho1");
-      olho2 = document.querySelector(".olho2");
-      android = document.querySelector(".android");
-      modal = document.querySelector("#modal");
-      btnModal = document.querySelector("#btn-modal");
+      form        = document.search;
+      search      = document.querySelector("#q");
+      olho1       = document.querySelector(".olho1");
+      olho2       = document.querySelector(".olho2");
+      android     = document.querySelector(".android");
+      modal       = document.querySelector("#modal");
+      btnModal    = document.querySelector("#btn-modal");
       clicksCount = 0;
 
       var piscarOlhos = function () {
@@ -123,7 +123,7 @@
       var trocaTema = function () {
         var currentDate = new Date();
         var horaAtual = currentDate.getHours();
-        if ( (horaAtual >= 18 && horaAtual <= 23) || (horaAtual >= 1 && horaAtual <= 5) ) {
+        if ( (horaAtual >= 18 && horaAtual <= 23) || (horaAtual >= 0 && horaAtual <= 5) ) {
           document.body.classList.add('night');
         } else { 
           document.body.classList.remove('night');
@@ -148,14 +148,19 @@
       }
 
       var showModal = function () {
-        var q = window.location.search;
-        var busca = q.split('=');
-        if (q.length > 0) {
-          search.value = busca[1].replace(/[+]/g,' ') || "x";
-          setTimeout(function(){
+        if (window.location.search.length > 0) {
+          var busca = window.location.search.split('=');
+          search.value = busca[1].replace(/[+]/g,' ') || "";
+          setTimeout(function () {
             modal.className += " show";
           }, 1000);
-        }  
+        } else {
+          if (search.value.length > 0) {
+            setTimeout(function () {
+              modal.className += " show";
+            }, 1000);
+          }
+        }
       }
 
       var ajaxPesquisa = function() {
@@ -164,8 +169,8 @@
 
         xhr.onreadystatechange = function () {
           if (xhr.readyState === 4 && xhr.status === 200) {
-            var ret = xhr.responseText;
-            modal.innerHTML += ret;
+            modal.innerHTML += xhr.responseText;
+            showModal();
           }
         }
 
@@ -178,8 +183,11 @@
       var darTchauId    = setInterval(darTchau, 10000);
       var trocaTemaId   = setInterval(trocaTema, 25000);
 
-      trocaTema();
-      showModal();
+      setTimeout(trocaTema, 500);
+
+      if (window.location.search.length > 0) {
+        showModal();
+      }
 
       form.onsubmit = function (evt) {
         e = evt ? evt : window.event;
