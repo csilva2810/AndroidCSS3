@@ -69,7 +69,7 @@ body.night {
   text-align: center;
   font-family: 'Segoe UI', 'Calibri', sans-serif;
 
-  opacity: 1;
+  opacity: 0;
   visibility: hidden;
   
   border-radius: 5px;
