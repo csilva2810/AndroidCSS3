@@ -14,6 +14,7 @@
     <div class="search-container">
       <form action="" name="search" method="GET">
         <input type="search" class="search" name="q" id="q" placeholder="Buscar no Google..." tabindex="1">  
+        <div class="search-dica">Tecle Enter para Pesquisar!</div>
       </form>
     </div>
 
@@ -93,6 +94,7 @@
 
     <script type="text/javascript">
       search      = document.querySelector("#q");
+      searchDica  = document.querySelector(".search-dica");
       olho1       = document.querySelector(".olho1");
       olho2       = document.querySelector(".olho2");
       android     = document.querySelector(".android");
@@ -176,6 +178,14 @@
         setTimeout(function(){
           modal.style.display = "none";
         }, 500);
+      }
+
+      search.onkeyup = function () {
+        if (this.value.length > 2) {
+          searchDica.className+= " show";
+        } else {
+          searchDica.className = "search-dica";
+        }
       }
       
     </script>
