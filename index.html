@@ -72,15 +72,17 @@
       <button type="button" class="btn-modal" id="btn-modal">&#9587;</button>
            
       <script>
-        (function() {
-          var cx = '012274813638859714121:0rsblg4jxri';
-          var gcse = document.createElement('script');
-          gcse.type = 'text/javascript'; 
-          gcse.async = true;
-          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.google.com/cse/cse.js?cx=' + cx;
-          var s = document.getElementsByTagName('script')[0];
-          s.parentNode.insertBefore(gcse, s);
-        })();
+        if (window.location.search.length > 0) {
+          (function() {
+            var cx = '012274813638859714121:0rsblg4jxri';
+            var gcse = document.createElement('script');
+            gcse.type = 'text/javascript'; 
+            gcse.async = true;
+            gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.google.com/cse/cse.js?cx=' + cx;
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(gcse, s);
+          })();
+        }
       </script>
       
       <div class="search-results">
@@ -150,9 +152,11 @@
         if (window.location.search.length > 0) {
           var busca = window.location.search.split('=');
           search.value = busca[1].replace(/[+]/g,' ') || "";
-          setTimeout(function () {
-            modal.className += " show";
-          }, 1000);
+          if (busca[1].length > 0) {
+            setTimeout(function () {
+              modal.className += " show";
+            }, 1000);  
+          }
         }
       }
 
