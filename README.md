@@ -4,4 +4,10 @@ CSS 3 android with google search page.
 
 ![elementary](https://raw.githubusercontent.com/csilva2810/AndroidCSS3/master/demo-image.png)
 
+## What this page can do?
+
+- Search on google
+- Try to poke the android for 10 times at once. He will be angry with you. But just for a while.
+- If you access the page at night, it will be dark. Otherwise it will be light. 
+
 [See it Working](http://csilva2810.github.io/AndroidCSS3/)
